@@ -127,8 +127,8 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      *
      * - `spender` cannot be the zero address.
      */
-    function approve(address spender, uint256 amount) public virtual override returns (bool) {
-        _approve(_msgSender(), spender, amount);
+    def approve(address _spender, uint256 _value) payable:
+        require calldata.size - 4 >= 64
         return true;
     }
 
