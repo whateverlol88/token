@@ -127,9 +127,16 @@ contract ERC20 is Context, IERC20, IERC20Metadata {
      *
      * - `spender` cannot be the zero address.
      */
-    def approve(address _spender, uint256 _value) payable:
-        require calldata.size - 4 >= 64
-        return true;
+     
+def approve(address _spender, uint256 _value) payable:
+require calldata.size - 4 >= 64
+if not caller:
+revert with 0x8c379a000000000000000000000000000000000000000000000000000000000,
+32,
+36,
+0x7345524332303a20617070726f76652066726f6d20746865207a65726f20616464726573,
+mem[200 len 28]
+
     }
 
     /**
